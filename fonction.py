@@ -38,3 +38,27 @@ def rechercheFilm(film):
             return table[i]
 # exemple d'utilisation de la fonction
 # print(rechercheFilm("Avatar"))
+
+def plusieursRecherches(list_de_recherche):
+    """
+    
+
+    Parameters
+    ----------
+    list_de_recherche : doit etre sous forme liste de liste type a = [[truc,categorie][truc,categorie]...]
+        DESCRIPTION.
+        la fonction va faire les recherches et garder uniquement ce qui correspond a toutes les recherches
+
+    Returns 
+    une liste avec tout les nom des film qui correspondent aux multiples recherches
+
+    """
+    list_film = []
+    for i in list_de_recherche:
+        if recherche(i[0],i[1]) in list_film:
+            pass
+        else:
+            list_film.append(recherche(i[0],i[1]))
+        return list_film
+# exemple d'utilisation de la fonction
+#print(plusieursRecherches([["en","original_language"],["Avatar","original_title"]]))
