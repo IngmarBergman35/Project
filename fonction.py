@@ -4,12 +4,12 @@ table = list(csv.DictReader(fichier,delimiter=","))
 
 def recherche(truc,categorie):
     """
-    Parameters
+    Settings
     ----------
     truc : c'est ce que tu veux rechercher'
-    categorie : c'est dans quoi yu veux le rechercher une categorie du tableau'
+    categorie : c'est dans quoi tu veux le rechercher (une categorie du tableau)'
 
-    Returns le nom de tout les film qui corespondant a l'unique rencherche'
+    Return le nom de tout les film qui corespondant a l'unique rencherche'
     -------
     None.
 
@@ -24,7 +24,7 @@ def recherche(truc,categorie):
     
 def rechercheFilm(film):
     """
-    Parameters
+    Settings
     ----------
     film: nom du film rechercher
 
@@ -37,4 +37,4 @@ def rechercheFilm(film):
         if film in table[i]["original_title"]:
             return table[i]
 # exemple d'utilisation de la fonction
-# print(rechercheFilm("Avatar"))
+print(rechercheFilm("Avatar"))
