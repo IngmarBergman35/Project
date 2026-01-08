@@ -37,4 +37,4 @@ def rechercheFilm(film):
         if film in table[i]["original_title"]:
             return table[i]
 # exemple d'utilisation de la fonction
-print(rechercheFilm("Avatar"))
+# print(rechercheFilm("Avatar"))
