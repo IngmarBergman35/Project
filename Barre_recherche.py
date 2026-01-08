@@ -4,6 +4,7 @@ from fonction import *
 '''parametrage app'''
 app=tkinter.Tk() 
 app.resizable(False,False) #empecher l'app d'etre redimentionner en L et l
+
 app.config(bg="black") #fond noir
 '''creation frame'''
 frame1=tkinter.Frame(app,width=350,height=250) 
@@ -24,6 +25,6 @@ button1=tkinter.Button(frame1,text='Rechercher',bg='darkblue',fg='white',command
 button1.grid(row=2,column=0,padx=5,pady=5) 
 
 '''boucle infini pour pas de fin''' 
-app.mainloop()
+
     
     
