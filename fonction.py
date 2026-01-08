@@ -61,4 +61,4 @@ def plusieursRecherches(list_de_recherche):
             list_film.append(recherche(i[0],i[1]))
         return list_film
 # exemple d'utilisation de la fonction
-print(plusieursRecherches([["en","original_language"],["Avatar","original_title"]]))
+#print(plusieursRecherches([["en","original_language"],["Avatar","original_title"]]))
