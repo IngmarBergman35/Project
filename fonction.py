@@ -1,7 +1,7 @@
 import csv
 fichier = open("movies.csv","r",encoding="utf8")
 table = list(csv.DictReader(fichier,delimiter=","))
-
+print(table[0])
 def recherche(truc,categorie):
     """
     Settings
