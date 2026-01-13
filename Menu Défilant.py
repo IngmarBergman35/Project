@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-
-# -*- coding: utf-8 -*-
-
 from tkinter import *
 
 
@@ -95,5 +91,6 @@ menuDeroulant1.add_command(label="Fond sombre", command = fondSombre)
 # Attribution du menu déroulant au menu Affichage
 
 menuAffichage.configure(menu=menuDeroulant1)
+
 
 fen_princ.mainloop()
