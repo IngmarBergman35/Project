@@ -1,5 +1,8 @@
 import tkinter as tk
+
+#widgets = c'est les éléments de tkinter (button, etc)
+#windows = serves as a conainer to hold or contain these wdgt
+
 window = tk.Tk()
-entry = tk.Entry(fg="yellow", bg="blue", width=50)
-entry.pack()
+
 window.mainloop()
