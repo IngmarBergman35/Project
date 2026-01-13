@@ -34,10 +34,11 @@ def rechercheFilm(film):
 
     """
     for i in range(len(table)):
+        
         if film in table[i]["original_title"]:
             return table[i]
 # exemple d'utilisation de la fonction
-# print(rechercheFilm("Avatar"))
+#print(rechercheFilm("Avatar"))
 
 def plusieursRecherches(list_de_recherche):
     """
