@@ -12,34 +12,34 @@ fen_princ.geometry("900x600")
 
 # Création du cadre-conteneur pour les menus
 
-zoneMenu = Frame(fen_princ, borderwidth=3, bg='#557788')
+zoneMenu = Frame(fen_princ, borderwidth=3, bg='#34828C')
 
 zoneMenu.grid(row=0,column=0)
 
 
 # Création de l'onglet Fichier
 
-menuFichier = Menubutton(zoneMenu, text='Fichier', width='20', borderwidth=2, bg='gray', activebackground='darkorange',relief = RAISED)
+menuFichier = Menubutton(zoneMenu, text='Fichier', width='20',text_color="#CF40C0", borderwidth=2, bg='#439177', activebackground='#CF40C0',relief = RAISED)
 
 menuFichier.grid(row=0,column=0)
 
 
 # Création de l'onglet Edition
 
-menuEdit = Menubutton(zoneMenu, text='Editer', width='20', borderwidth=2, bg='gray', activebackground='darkorange',relief = RAISED)
+menuEdit = Menubutton(zoneMenu, text='Editer', width='20',text_color="#CF40C0", borderwidth=2, bg='#439177', activebackground='#CF40C0',relief = RAISED)
 
 menuEdit.grid(row=0,column=1)
 
 
 # Création de l'onglet Format
 
-menuFormat = Menubutton(zoneMenu, text='Format', width='20', borderwidth=2, bg='gray', activebackground='darkorange',relief = RAISED)
+menuFormat = Menubutton(zoneMenu, text='Format', width='20',text_color="#CF40C0", borderwidth=2, bg='#439177', activebackground='#CF40C0',relief = RAISED)
 
 menuFormat.grid(row=0,column=2)
 
 # Création de l'onglet Affichage
 
-menuAffichage = Menubutton(zoneMenu, text='Affichage', width='20', borderwidth=2, bg='white', activebackground='darkorange',relief = RAISED)
+menuAffichage = Menubutton(zoneMenu, text='Affichage', width='20',text_color="#CF40C0", borderwidth=2, bg='#439177', activebackground='#CF40C0',relief = RAISED)
 
 menuAffichage.grid(row=1,column=3)
 
