@@ -45,7 +45,7 @@ button1.grid(row=2,column=0,padx=5,pady=5)
 
 '''boucle infini pour pas de fin''' 
 
-    
+tkinter.mainloop()
 
 #B5F5D1
 #F4B5F5
