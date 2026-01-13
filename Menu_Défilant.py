@@ -46,6 +46,23 @@ menuAffichage.grid(row=1,column=3)
 # Création d'un menu défilant
 # Définitions des fonctions
 
+
+menuDeroulant1 = Menu(menuAffichage)
+
+menuDeroulant1.add_command(label='Petit format', command = 'petitFormat')
+
+menuDeroulant1.add_command(label="Normal", command = 'formatNormal')
+
+menuDeroulant1.add_command(label="Grand format", command = 'grandFormat')
+
+menuDeroulant1.add_command(label="Fond clair", command = 'fondClair')
+
+menuDeroulant1.add_command(label="Fond sombre", command = 'fondSombre')
+
+# Attribution du menu déroulant au menu Affichage
+
+menuAffichage.configure(menu=menuDeroulant1)
+menuDeroulant1.add_command(label="Fond sombre", command = 'fondSombre')
 def petitFormat():
 
     print("Petit format")
@@ -69,23 +86,6 @@ def fondClair():
 def fondSombre():
 
     print("Fond Sombre")
-
-menuDeroulant1 = Menu(menuAffichage)
-
-menuDeroulant1.add_command(label='Petit format', command = petitFormat)
-
-menuDeroulant1.add_command(label="Normal", command = formatNormal)
-
-menuDeroulant1.add_command(label="Grand format", command = grandFormat)
-
-menuDeroulant1.add_command(label="Fond clair", command = fondClair)
-
-menuDeroulant1.add_command(label="Fond sombre", command = fondSombre)
-
-# Attribution du menu déroulant au menu Affichage
-
-menuAffichage.configure(menu=menuDeroulant1)
-menuDeroulant1.add_command(label="Fond sombre", command = fondSombre)
 
 
 # Attribution du menu déroulant au menu Affichage
