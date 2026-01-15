@@ -48,6 +48,9 @@ button1.grid(row=2,column=0,padx=5,pady=5)
 tkinter.mainloop()
 
 
+interessant=['budget','genres']
+
+
 
 #B5F5D1
 #F4B5F5
