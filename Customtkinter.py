@@ -1,4 +1,4 @@
-import tkinter
+import tkinter 
 from customtkinter import *
 from PIL import Image
 #ajouter image
@@ -7,28 +7,27 @@ app=tkinter.Tk()
 app.geometry("500x400")
 
 
-set_appearance_mode("dark")
+#set_appearance_mode("dark")
 
-img=Image.open("message_icon.png")
+#img=Image.open("loupe-fond-quadrille_1262-6424.avif")
 #ajouter image
-
-btn=CTkButtons(master=app, text="Pick Me", corner_radius=32, fg_color="#00FF0D",
-               hover_color="#FF00C3",border_color="FFFFFF",
+btn=CTkButton(master=app, text="rechercher", corner_radius=32, fg_color="#000000",
+               hover_color="#CF40C0",border_color="#FFFFFF",
                border_width=1,)
 #image pour ajouter sur le bouton
 
-btn.place(relx=0.5,anchor="center")
+btn.place(relx=0.5,rely=0.5,anchor="center")
+
 
 app.mainloop()
-
 #################################################################################################
-
-from Customtkinter import*
+#écrire
+from customtkinter import*
 
 app=CTk()
 app.geometry("500x400")
 
-label=CTklabel(master=app, text="...", font=("Yu Gothic",20),text_color="#")
+label=CTkLabel(master=app, text="rechercher", font=("Arial",20),text_color="#CF40C0")
 
 label.place(relx=0.5, rely=0.5, anchor="center")
 
@@ -36,17 +35,36 @@ label.place(relx=0.5, rely=0.5, anchor="center")
 app.mainloop()
 
 #################################################################################################
-
 from Customtkinter import*
 
 app=CTk()
 app.geometry("500x400")
 
-combobox=CTkComboBox(master=app, values=["option1","option2","option3","option4"], fg_color="#34828C",
+combobox=CTkComboBox(master=app, values=["Action","Romance","drame","Comedie"], fg_color="#34828C",
                      border_color="#439177", dropdown_fg_color="#439177")
 
 combobox.place(relx=0.5,rely=0.5, anchor="center")
                
                
 app.mainloop()
-             
+#################################################################################################
+"""from customtkinter import *
+from PIL import Image, ImageTk
+
+app = CTk()
+app.geometry("400x400")
+
+img = Image.open("loupe-fond-quadrille_1262-6424.png")
+img_small = img.resize((200, 200))
+img_zoom = img.resize((300, 300))
+
+img_small_tk = ImageTk.PhotoImage(img_small)
+img_zoom_tk = ImageTk.PhotoImage(img_zoom)
+
+label = CTkLabel(app, image=img_small_tk, text="")
+label.pack(expand=True)
+
+label.bind("<Enter>", lambda e: label.configure(image=img_zoom_tk))
+label.bind("<Leave>", lambda e: label.configure(image=img_small_tk))
+
+app.mainloop()"""
