@@ -8,6 +8,22 @@ app.title("Moteur de recherche")
 app.resizable(False, False)
 app.config(bg="#8B008B")  # fond violet foncé (on peut faire rose plus clair aussi)
 
+interesant=[
+    'title',
+    'original_title',
+    'release_date',
+    'genres',
+    'overview',
+    'tagline',
+    'vote_average',
+    'vote_count',
+    'cast',
+    'director',
+    'runtime',
+    'production_companies',
+    'production_countries',
+    'budget',
+    'homepage']
 # -------- Frame principale --------
 frame = tk.Frame(app, bg="#FFC0CB", padx=20, pady=20)  # rose clair
 frame.grid(row=0, column=0)
@@ -63,9 +79,12 @@ def lancer_recherche():
     if not films_trouves:
         resultats.insert(tk.END, "Aucun film trouvé.")
     else:
-        for f in films_trouves.values():
-            resultats.insert(tk.END, f + "\n")
-            print(f)
+        for champ in interesant:
+            if champ in films_trouves and films_trouves[champ]:
+                resultats.insert(
+                    tk.END,
+                    f"{champ.replace('_', ' ').title()} : {films_trouves[champ]}\n\n"
+                )
 
 # -------- Bouton --------
 button1 = tk.Button(
