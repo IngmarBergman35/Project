@@ -66,6 +66,8 @@ resultats = tk.Text(
     relief="sunken"
 )
 resultats.grid(row=3, column=0, pady=10)
+entry1.bind("<Return>", lambda event: lancer_recherche())
+entry1.focus()
 
 #Fonction de recherche
 def lancer_recherche():
