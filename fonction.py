@@ -1,7 +1,9 @@
+# les fonction sont finies n'y touchez surtout pas !!!!!!!!
+
 import csv
 fichier = open("movies.csv","r",encoding="utf8")
 table = list(csv.DictReader(fichier,delimiter=","))
-print(table[0])
+#print(table[0])
 def recherche(truc,categorie):
     """
     Settings
@@ -56,10 +58,9 @@ def plusieursRecherches(list_de_recherche):
     """
     list_film = []
     for i in list_de_recherche:
-        if recherche(i[0],i[1]) in list_film:
-            pass
-        else:
-            list_film.append(recherche(i[0],i[1]))
-        return list_film
-# exemple d'utilisation de la fonction
-#print(plusieursRecherches([["en","original_language"],["Avatar","original_title"]]))
+        list_film.append(recherche(i[0],i[1]))
+    #la ligne suivante a ete recherché et sert a trouver tout les elements communs aux multiples listes
+    elements_communs = list(set(list_film[0]).intersection(*list_film[1:]))
+    return elements_communs
+#exemple d'utilisation de la fonction
+#print(plusieursRecherches([["en","original_language"],["Cru","cast"],["2015","release_date"]]))
