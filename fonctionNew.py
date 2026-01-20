@@ -53,4 +53,4 @@ def plusieursRecherches(list_de_recherche):
     elements_communs = list(set(list_film[0]).intersection(*list_film[1:]))
     return elements_communs
 # exemple d'utilisation de la fonction
-print(plusieursRecherches([["en","original_language"],["Avatar","original_title"]]))
+#print(plusieursRecherches([["en","original_language"],["Avatar","original_title"]]))
