@@ -1,96 +1,37 @@
 from tkinter import *
+from customtkinter import*
+import difflib
 
 
 # Création de la fenêtre
-
-fen_princ = Tk()
-
-fen_princ.title("Mon application à moi que j'ai")
-
+fen_princ = CTk()
+fen_princ.title("Search Movies")
 fen_princ.geometry("900x600")
 
+combobox=CTkComboBox(master=zoneMenu, values=["Action","Romance","Drame","Comedie"],text_color="#FFFFFF", fg_color="#000000",
+                     border_color="#CF40C0", dropdown_fg_color="#FFFFFF")
 
-# Création du cadre-conteneur pour les menus
+#combobox.place(relx=0.5,rely=0.5, anchor="center")
+combobox.grid(row=1,column=3)              
 
-zoneMenu = Frame(fen_princ, borderwidth=3, bg='#34828C')
+categories = ["Action", "Romance", "Drame", "Comedie"]
+def corriger_texte(event=None):
+    texte = combobox.get()
 
-zoneMenu.grid(row=0,column=0)
+    if texte == "":
+        return
 
+    correspondance = difflib.get_close_matches(
+        texte,
+        categories,
+        n=1,
+        cutoff=0.5   # tolérance aux fautes (0.0 → très large / 1.0 → strict)
+    )
 
-# Création de l'onglet Fichier
-
-menuFichier = Menubutton(zoneMenu, text='Fichier', width='20',text_color="#CF40C0", borderwidth=2, bg='#439177', activebackground='#CF40C0',relief = RAISED)
-
-menuFichier.grid(row=0,column=0)
-
-
-# Création de l'onglet Edition
-
-menuEdit = Menubutton(zoneMenu, text='Editer', width='20',text_color="#CF40C0", borderwidth=2, bg='#439177', activebackground='#CF40C0',relief = RAISED)
-
-menuEdit.grid(row=0,column=1)
-
-
-# Création de l'onglet Format
-
-menuFormat = Menubutton(zoneMenu, text='Format', width='20',text_color="#CF40C0", borderwidth=2, bg='#439177', activebackground='#CF40C0',relief = RAISED)
-
-menuFormat.grid(row=0,column=2)
-
-# Création de l'onglet Affichage
-
-menuAffichage = Menubutton(zoneMenu, text='Affichage', width='20',text_color="#CF40C0", borderwidth=2, bg='#439177', activebackground='#CF40C0',relief = RAISED)
-
-menuAffichage.grid(row=1,column=3)
-
-# Création d'un menu défilant
-# Définitions des fonctions
-
-
-menuDeroulant1 = Menu(menuAffichage)
-
-menuDeroulant1.add_command(label='Petit format', command = 'petitFormat')
-
-menuDeroulant1.add_command(label="Normal", command = 'formatNormal')
-
-menuDeroulant1.add_command(label="Grand format", command = 'grandFormat')
-
-menuDeroulant1.add_command(label="Fond clair", command = 'fondClair')
-
-menuDeroulant1.add_command(label="Fond sombre", command = 'fondSombre')
-
-# Attribution du menu déroulant au menu Affichage
-
-menuAffichage.configure(menu=menuDeroulant1)
-menuDeroulant1.add_command(label="Fond sombre", command = 'fondSombre')
-def petitFormat():
-
-    print("Petit format")
-
-
-def formatNormal():
-
-    print("Format Normal")
-
-
-def grandFormat():
-
-    print("Grand format")
-
-
-def fondClair():
-
-    print("Fond Clair")
-
-
-def fondSombre():
-
-    print("Fond Sombre")
-
-
-# Attribution du menu déroulant au menu Affichage
-
-menuAffichage.configure(menu=menuDeroulant1)
+    if correspondance:
+        combobox.set(correspondance[0])
+combobox.bind("<Return>", corriger_texte)
+combobox.bind("<FocusOut>", corriger_texte)
 
 
 fen_princ.mainloop()

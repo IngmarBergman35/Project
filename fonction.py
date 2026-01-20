@@ -1,7 +1,9 @@
+# les fonction sont finies n'y touchez surtout pas !!!!!!!!
+
 import csv
 fichier = open("movies.csv","r",encoding="utf8")
 table = list(csv.DictReader(fichier,delimiter=","))
-print(table[0])
+#print(table[0])
 def recherche(truc,categorie):
     """
     Settings
@@ -38,7 +40,11 @@ def rechercheFilm(film):
         if film in table[i]["original_title"]:
             return table[i]
 # exemple d'utilisation de la fonction
+<<<<<<< Updated upstream
 #print(rechercheFilm("Avatar"))
+=======
+print(rechercheFilm("Avatar"))
+>>>>>>> Stashed changes
 
 def plusieursRecherches(list_de_recherche):
     """
@@ -55,11 +61,23 @@ def plusieursRecherches(list_de_recherche):
 
     """
     list_film = []
+    final = []
     for i in list_de_recherche:
-        if recherche(i[0],i[1]) in list_film:
-            pass
-        else:
-            list_film.append(recherche(i[0],i[1]))
-        return list_film
+        list_film.append(recherche(i[0],i[1]))
+<<<<<<< Updated upstream
+    #la ligne suivante a ete recherché et sert a trouver tout les elements communs aux multiples listes
+    elements_communs = list(set(list_film[0]).intersection(*list_film[1:]))
+    return elements_communs
+#exemple d'utilisation de la fonction
+#print(plusieursRecherches([["en","original_language"],["Cru","cast"],["2015","release_date"]]))
+=======
+    for i in list_film:
+        for k in i:
+            if i == k:
+                final.append(i)
+            else:
+                pass
+    return final
 # exemple d'utilisation de la fonction
-#print(plusieursRecherches([["en","original_language"],["Avatar","original_title"]]))
+print(plusieursRecherches([["en","original_language"],["trou du cul","director"]]))
+>>>>>>> Stashed changes
