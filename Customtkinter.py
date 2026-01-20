@@ -35,12 +35,12 @@ label.place(relx=0.5, rely=0.5, anchor="center")
 app.mainloop()
 
 #################################################################################################
-from Customtkinter import*
+
 
 app=CTk()
 app.geometry("500x400")
 
-combobox=CTkComboBox(master=app, values=["Action","Romance","drame","Comedie"], fg_color="#34828C",
+combobox=CTkComboBox(master=app, values=["Action","Romance","Drame","Comedie",".",","], fg_color="#34828C",
                      border_color="#439177", dropdown_fg_color="#439177")
 
 combobox.place(relx=0.5,rely=0.5, anchor="center")
@@ -68,3 +68,22 @@ label.bind("<Enter>", lambda e: label.configure(image=img_zoom_tk))
 label.bind("<Leave>", lambda e: label.configure(image=img_small_tk))
 
 app.mainloop()"""
+#################################################################################################
+def rechercher(event=None):
+    recherche = search_entry.get()
+    categorie = combobox.get()
+    print(f"Recherche : {recherche} | Catégorie : {categorie}")
+search_entry = CTkEntry(
+    fen_princ,
+    width=350,
+    height=40,
+    placeholder_text="Rechercher un film...",
+    fg_color="#1E1E1E",
+    text_color="white",
+    border_color="#CF40C0",
+    corner_radius=20
+)
+search_entry.grid(row=2, column=0, padx=20, pady=20, sticky="w")
+
+# Appui sur Entrée
+search_entry.bind("<Return>", rechercher)
