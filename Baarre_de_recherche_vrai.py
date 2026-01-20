@@ -5,12 +5,12 @@ from fonction import *
 
 app = tk.Tk()
 app.title("Moteur de recherche")
-app.resizable(False, False)   #Empêche le redimensionnement
+app.resizable(True, True)   #Empêche le redimensionnement
 app.config(bg="#8B008B")  #fond violet foncé 
 
 interesant=[
     'title',
-    'original_title',
+    'original_title',                    
     'release_date',
     'genres',
     'overview',
@@ -27,7 +27,9 @@ interesant=[
 #Frame principale
 frame = tk.Frame(app, bg="#FFC0CB", padx=20, pady=20)  #rose clair
 frame.grid(row=0, column=0)
-
+app.grid_rowconfigure(0, weight=1)
+app.grid_columnconfigure(0, weight=1)
+frame.grid(row=0, column=0, sticky="nsew")
 #Titre
 lab1 = tk.Label(
     frame,
