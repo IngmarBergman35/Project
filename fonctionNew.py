@@ -21,7 +21,7 @@ def recherche(truc,categorie):
     return bonfilm
 
 # exemple d'utilisation de la fonction 
-# print(recherche("en","original_language"))
+#print(recherche("en","original_language"))
 def rechercheFilm(film):
     """
     Settings
